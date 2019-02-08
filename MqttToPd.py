@@ -5,11 +5,11 @@ import paho.mqtt.client as mqtt
 import json
 
 
-broker_address="192.168.0.73"
+broker_address="192.168.1.115"
 mqtt_topic="sensor"
 
 def on_message(client, userdata, message):
-    print("message received " ,str(message.payload.decode("utf-8")))
+    print("message received " ,str(message.payload.decode("utf-7")))
     print("message topic=",message.topic)
     print("message qos=",message.qos)
     print("message retain flag=",message.retain)   
