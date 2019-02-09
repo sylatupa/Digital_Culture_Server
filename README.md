@@ -12,6 +12,7 @@ This implementation will be done on a Raspberry Pi.
 ## Reasoning and Motivations
 IOT and the arts:
 Stand alone server benefits:
+Stand alone wifi-router: This project uses an additional wifi-router that is plugged into my homes wifi router, so it is interntet connected. But, the benefit of having this additional router layer is that I can take it with me to bring the network into locations that wouldn't have accessible wifi. Getting a battery operated wifi could make this potentially able to be run anywhere.
 
 
 
