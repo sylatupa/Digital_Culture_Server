@@ -9,7 +9,9 @@ Based off of Node Red because of its ease of use and support, as well as the web
 To convert MQTT to UDP, there is a standalone python script that is a MQTT broker and converts to UDP, if Node Red installation is not necessary or desirable.
 This implementation will be done on a Raspberry Pi.
 
-
+## Reasoning and Motivations
+IOT and the arts:
+Stand alone server benefits:
 
 
 
