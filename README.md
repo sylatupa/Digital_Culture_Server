@@ -39,9 +39,12 @@ Give examples
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
+At the time of writing this, Node-Red on a Pi was at version 15.3. 
+Node-Red is typically on a Raspberry Pi already. But, before you get started developing with it--upgrade it by running:
 
-Say what the step will be
+```
+sudo apt-get install --only-upgrade nodered
+```
 
 ```
 Give the example
