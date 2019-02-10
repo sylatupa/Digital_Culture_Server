@@ -31,6 +31,7 @@ Networking:
 
 Running headless:
 
+Running Mosquitto Broker automatically on boot
 
 
 ```
