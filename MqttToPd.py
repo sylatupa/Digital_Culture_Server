@@ -10,13 +10,10 @@ mqtt_topic="sensor"
 
 def on_message(client, userdata, message):
     print("message received " ,str(message.payload.decode("utf-7")))
-    print("message topic=",message.topic)
-    print("message qos=",message.qos)
-    print("message retain flag=",message.retain)   
-    #playSingleShot()
+    print("topic=",message.topic ,"  string_payload=",str(message.payload.decode("utf-7")), " ,qos=" , message.qos , " ,retain_flag=",message.retain)   
     obj = json.loads(str(message.payload.decode("utf-8")))    
     val = obj['v']
-    print("received ", val)
+    print("received ", val  )
     send2Pd(val)
 
 
@@ -32,9 +29,8 @@ client.connect(broker_address, 1883)
 
 print("Subscribing to topic",mqtt_topic)
 client.subscribe(mqtt_topic)
-
+client.subscribe("test")
 print("Publishing message to topic",mqtt_topic)
-#client.publish(mqtt_topic,"Hallo!!!")
 
 client.on_message=on_message
 client.loop_start()
