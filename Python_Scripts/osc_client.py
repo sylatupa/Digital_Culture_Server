@@ -6,6 +6,7 @@ import argparse
 parser = argparse.ArgumentParser()
 
 parser.add_argument("--next", "-n", help="set output width")
+parser.add_argument("--prev", "-p", help="set output width")
 parser.add_argument("--knob", "-k",type=int, nargs='+',help="set output width")
 parser.add_argument("--trigger", "-t", help="set output width")
 parser.add_argument("--osd", "-o", help="set output width")
@@ -25,9 +26,13 @@ port = 4000
 
 client = udp_client.SimpleUDPClient(ip, port)
 
+def prev(message):
+    #number must be in range of all available modes
+    client.send_message("/key", [1,1])
+
 def next(message):
     #number must be in range of all available modes
-    client.send_message("/key", [2,int(message)])
+    client.send_message("/key", [2,1])
 
 def knobs(message):
     #
@@ -58,6 +63,8 @@ if args.osd:
     osd(int(args.osd))
 if args.trigger:
     trigger(int(args.trigger))
+if args.prev:
+    prev(int(args.prev))
 if args.next:
     next(int(args.next))
 if args.screen:
