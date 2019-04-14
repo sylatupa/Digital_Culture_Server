@@ -6,7 +6,7 @@ import argparse
 parser = argparse.ArgumentParser()
 
 parser.add_argument("--next", "-n", help="set output width")
-parser.add_argument("--knob", "-k", help="set output width")
+parser.add_argument("--knob", "-k",type=int, nargs='+',help="set output width")
 parser.add_argument("--trigger", "-t", help="set output width")
 parser.add_argument("--osd", "-o", help="set output width")
 parser.add_argument("--screen", "-s", help="set output width")
@@ -31,8 +31,8 @@ def next(message):
 
 def knobs(message):
     #
-    i = int(message)
-    client.send_message("/knobs", [i,i,i,i,i,i])
+    client.send_message("/knobs", message)
+    #client.send_message("/knobs", [i,i,i,i,i,i])
 
 def osd(message):
     # toggle on and off
@@ -51,11 +51,9 @@ def autoclear(i):
     # positive turn off negative on
     client.send_message("/key", [8,i])
     
-   
-   
 
 if args.knob:
-    knobs(int(args.knob))
+    knobs(args.knob)
 if args.osd:
     osd(int(args.osd))
 if args.trigger:
@@ -66,8 +64,4 @@ if args.screen:
     next(int(args.screen))
 if args.autoclear:
     autoclear(int(args.autoclear))
-
-
-
-
 
