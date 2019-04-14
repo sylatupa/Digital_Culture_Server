@@ -1,10 +1,13 @@
-
 from pythonosc import osc_message_builder
 from pythonosc import udp_client
+import time
+ip = "192.168.1.115"
+port = 4000
 
-if __name__ == "__main__":
-client = udp_client.SimpleUDPClient(, args.port)
+client = udp_client.SimpleUDPClient(ip, port)
 
-  for x in range(10):
-    client.send_message("/filter", random.random())
-    time.sleep(1)
+def knobs(message):
+    for i in range(0,1000):
+        client.send_message("/knobs", [i,i,i,i,i,i])
+        time.sleep(.07)
+knobs('here')
