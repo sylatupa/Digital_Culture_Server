@@ -18,6 +18,7 @@ Stand alone wifi-router: This project uses an additional wifi-router that is plu
 
 ![dashboard2]
 
+
 ## Getting Started
 
 On many Pi OS images there is Node-Red already installed. It can be started from the terminal by typing node-red. The server will start and tell you the ip address that its running on, like:  [info] Server now running at http://127.0.0.1:1880/. Because we gave the Pi a reserved ip on the wifi router, and my laptop is using the same network, I open the Node-Red web interface using the Pis ip, and the port 1880. 
@@ -36,4 +37,4 @@ Running headless:
 Running Mosquitto Broker automatically on boot
 
 [dashboard1]: ./Images/node_red_dashboard.png
-[dashboard2]:	./Images/node_red_dashboard_controls_for_ESP32.png
+[dashboard2]:	./Images/ETC_Controls.png
