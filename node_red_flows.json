@@ -1,0 +1,1025 @@
+[
+    {
+        "id": "1033d852.cbfa6",
+        "type": "tab",
+        "label": "ETC Controls",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "f9ed3236.6b4db",
+        "type": "exec",
+        "z": "1033d852.cbfa6",
+        "command": "python3 $HOME/Digital_Culture_Server/Python_Scripts/osc_client.py -n",
+        "addpay": true,
+        "append": "",
+        "useSpawn": "",
+        "timer": "",
+        "name": "Next Program",
+        "x": 494.8333854675293,
+        "y": 356.66674041748047,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "d0442b82.80aec8",
+        "type": "function",
+        "z": "1033d852.cbfa6",
+        "name": "knob1",
+        "func": "var local= msg.payload || {}\nmsg.payload= local\nglobal.set('k1',local);\nreturn msg;",
+        "outputs": "1",
+        "noerr": 0,
+        "x": 424.33343505859375,
+        "y": 930.5001707077026,
+        "wires": [
+            [
+                "13af7a46.16a0c6"
+            ]
+        ]
+    },
+    {
+        "id": "13af7a46.16a0c6",
+        "type": "function",
+        "z": "1033d852.cbfa6",
+        "name": "joined",
+        "func": "//var local = [global.get('k1'),global.get('k2'),global.get('k3'),global.get('k4'), global.get('k5'), global.get('k6')]\nvar k1 = global.get('k1') || {};\nvar k2 = global.get('k2') || {};\nvar k3 = global.get('k3') || {};\nvar k4 = global.get('k4') || {};\nvar k5 = global.get('k5') || {};\nvar k6 = global.get('k6') || {};\nmsg.payload = k1 + \" \" + k2 + \" \" + k3 + \" \" + k4 + \" \" + k5 + \" \" + k6;\n//context.set('knobs',local);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 568.33349609375,
+        "y": 1001.5001697540283,
+        "wires": [
+            [
+                "fcfffd4b.8a93b8"
+            ]
+        ]
+    },
+    {
+        "id": "6340bf46.dd522",
+        "type": "function",
+        "z": "1033d852.cbfa6",
+        "name": "knob2",
+        "func": "var local= msg.payload || {}\nmsg.payload= local\nglobal.set('k2',local);\nreturn msg;",
+        "outputs": "1",
+        "noerr": 0,
+        "x": 423.83343505859375,
+        "y": 967.5001707077026,
+        "wires": [
+            [
+                "13af7a46.16a0c6"
+            ]
+        ]
+    },
+    {
+        "id": "2e1c6879.22144",
+        "type": "function",
+        "z": "1033d852.cbfa6",
+        "name": "knob3",
+        "func": "var local= msg.payload || {}\nmsg.payload= local\nglobal.set('k3',local);\nreturn msg;",
+        "outputs": "1",
+        "noerr": 0,
+        "x": 423.33343505859375,
+        "y": 1003.5001707077026,
+        "wires": [
+            [
+                "13af7a46.16a0c6"
+            ]
+        ]
+    },
+    {
+        "id": "fd1c2ff5.d0098",
+        "type": "function",
+        "z": "1033d852.cbfa6",
+        "name": "knob4",
+        "func": "var local= msg.payload || {}\nmsg.payload= local\nglobal.set('k4',local);\nreturn msg;",
+        "outputs": "1",
+        "noerr": 0,
+        "x": 423.33343505859375,
+        "y": 1041.5001707077026,
+        "wires": [
+            [
+                "13af7a46.16a0c6"
+            ]
+        ]
+    },
+    {
+        "id": "f1f2c70d.8f6958",
+        "type": "function",
+        "z": "1033d852.cbfa6",
+        "name": "knob5",
+        "func": "var local= msg.payload || {}\nmsg.payload= local\nglobal.set('k5',local);\nreturn msg;",
+        "outputs": "1",
+        "noerr": 0,
+        "x": 419.83343505859375,
+        "y": 1077.5001707077026,
+        "wires": [
+            [
+                "13af7a46.16a0c6"
+            ]
+        ]
+    },
+    {
+        "id": "a3e3d11e.caf6b8",
+        "type": "function",
+        "z": "1033d852.cbfa6",
+        "name": "knob6",
+        "func": "var local= msg.payload || {}\nmsg.payload= local\nglobal.set('k6',local);\nreturn msg;",
+        "outputs": "1",
+        "noerr": 0,
+        "x": 422.33343505859375,
+        "y": 1118.5001831054688,
+        "wires": [
+            [
+                "13af7a46.16a0c6"
+            ]
+        ]
+    },
+    {
+        "id": "fcfffd4b.8a93b8",
+        "type": "exec",
+        "z": "1033d852.cbfa6",
+        "command": "python3 $HOME/Digital_Culture_Server/Python_Scripts/osc_client.py -k",
+        "addpay": true,
+        "append": "",
+        "useSpawn": "",
+        "timer": "",
+        "oldrc": false,
+        "name": "ETC Send",
+        "x": 767.1668090820312,
+        "y": 1007.83349609375,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "1b263844.2b2ea",
+        "type": "exec",
+        "z": "1033d852.cbfa6",
+        "command": "python3 $HOME/Digital_Culture_Server/Python_Scripts/osc_client.py -t",
+        "addpay": true,
+        "append": "",
+        "useSpawn": "",
+        "timer": "",
+        "name": "Trigger",
+        "x": 474.8333740234375,
+        "y": 304.666748046875,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "92bd6033.796648",
+        "type": "exec",
+        "z": "1033d852.cbfa6",
+        "command": "python3 $HOME/Digital_Culture_Server/Python_Scripts/osc_client.py -s",
+        "addpay": true,
+        "append": "",
+        "useSpawn": "",
+        "timer": "",
+        "name": "Screen",
+        "x": 465.8333740234375,
+        "y": 243.666748046875,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "ec0a3094.4d27a",
+        "type": "exec",
+        "z": "1033d852.cbfa6",
+        "command": "python3 $HOME/Digital_Culture_Server/Python_Scripts/osc_client.py -o",
+        "addpay": true,
+        "append": "",
+        "useSpawn": "",
+        "timer": "",
+        "name": "Video Synth Menu",
+        "x": 496.8333740234375,
+        "y": 191.666748046875,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "5981b59c.075a6c",
+        "type": "exec",
+        "z": "1033d852.cbfa6",
+        "command": "python3 $HOME/Digital_Culture_Server/Python_Scripts/osc_client.py -a",
+        "addpay": true,
+        "append": "",
+        "useSpawn": "",
+        "timer": "",
+        "name": "AutoClear",
+        "x": 453.8333740234375,
+        "y": 140.666748046875,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "1dce500d.a52738",
+        "type": "exec",
+        "z": "1033d852.cbfa6",
+        "command": "python3 $HOME/Digital_Culture_Server/Python_Scripts/osc_client.py -s",
+        "addpay": true,
+        "append": "",
+        "useSpawn": "",
+        "timer": "",
+        "name": "Screen Capture",
+        "x": 467.8333740234375,
+        "y": 86.666748046875,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "bc57bc2e.2ec7d8",
+        "type": "random",
+        "z": "1033d852.cbfa6",
+        "name": "",
+        "low": "0",
+        "high": "1024",
+        "inte": "true",
+        "property": "payload",
+        "x": 589.0001525878906,
+        "y": 642.166748046875,
+        "wires": [
+            [
+                "d0442b82.80aec8"
+            ]
+        ]
+    },
+    {
+        "id": "243c7927.05154e",
+        "type": "exec",
+        "z": "1033d852.cbfa6",
+        "command": "python3 $HOME/Digital_Culture_Server/Python_Scripts/osc_client.py -p",
+        "addpay": true,
+        "append": "",
+        "useSpawn": "",
+        "timer": "",
+        "name": "Previous Program",
+        "x": 488.8333740234375,
+        "y": 414.666748046875,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "4696c55f.b6af2c",
+        "type": "random",
+        "z": "1033d852.cbfa6",
+        "name": "",
+        "low": "0",
+        "high": "1024",
+        "inte": "true",
+        "property": "payload",
+        "x": 565.5002136230469,
+        "y": 686.1668090820312,
+        "wires": [
+            [
+                "6340bf46.dd522"
+            ]
+        ]
+    },
+    {
+        "id": "b00d1b0b.a18dc8",
+        "type": "random",
+        "z": "1033d852.cbfa6",
+        "name": "",
+        "low": "0",
+        "high": "249",
+        "inte": "true",
+        "x": 569.5001525878906,
+        "y": 808.1668090820312,
+        "wires": [
+            [
+                "f1f2c70d.8f6958"
+            ]
+        ]
+    },
+    {
+        "id": "d2da2f53.00488",
+        "type": "random",
+        "z": "1033d852.cbfa6",
+        "name": "",
+        "low": "0",
+        "high": "1024",
+        "inte": "true",
+        "property": "payload",
+        "x": 567.0079040527344,
+        "y": 726.190185546875,
+        "wires": [
+            [
+                "2e1c6879.22144"
+            ]
+        ]
+    },
+    {
+        "id": "91c3827a.badc5",
+        "type": "random",
+        "z": "1033d852.cbfa6",
+        "name": "",
+        "low": "0",
+        "high": "1100",
+        "inte": "true",
+        "x": 554.0078735351562,
+        "y": 875.190185546875,
+        "wires": [
+            [
+                "a3e3d11e.caf6b8"
+            ]
+        ]
+    },
+    {
+        "id": "61d4433c.ac187c",
+        "type": "random",
+        "z": "1033d852.cbfa6",
+        "name": "",
+        "low": "0",
+        "high": "1024",
+        "inte": "true",
+        "property": "payload",
+        "x": 568.0078735351562,
+        "y": 766.190185546875,
+        "wires": [
+            [
+                "fd1c2ff5.d0098"
+            ]
+        ]
+    },
+    {
+        "id": "a5a60d9f.71956",
+        "type": "inject",
+        "z": "1033d852.cbfa6",
+        "name": "Laptop IP",
+        "topic": "",
+        "payload": "192.168.1.115:4000",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 150.16668701171875,
+        "y": 1315.833267211914,
+        "wires": [
+            [
+                "b9022884.fe7d6"
+            ]
+        ]
+    },
+    {
+        "id": "b9022884.fe7d6",
+        "type": "exec",
+        "z": "1033d852.cbfa6",
+        "command": "python3 $HOME/Digital_Culture_Server/Python_Scripts/osc_client.py -i",
+        "addpay": true,
+        "append": "",
+        "useSpawn": "",
+        "timer": "",
+        "oldrc": false,
+        "name": "Previous Program",
+        "x": 321.16668701171875,
+        "y": 1314.1666107177734,
+        "wires": [
+            [
+                "e3d6a4f6.c320a"
+            ],
+            [
+                "e3d6a4f6.c320a"
+            ],
+            [
+                "e3d6a4f6.c320a"
+            ]
+        ]
+    },
+    {
+        "id": "e3d6a4f6.c320a",
+        "type": "debug",
+        "z": "1033d852.cbfa6",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "payload",
+        "x": 526.1666870117188,
+        "y": 1312.1666259765625,
+        "wires": []
+    },
+    {
+        "id": "cb49e482.3edcf",
+        "type": "inject",
+        "z": "1033d852.cbfa6",
+        "name": "",
+        "topic": "y",
+        "payload": "666",
+        "payloadType": "num",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 419.3332977294922,
+        "y": 589,
+        "wires": [
+            [
+                "bc57bc2e.2ec7d8",
+                "4696c55f.b6af2c",
+                "d2da2f53.00488",
+                "61d4433c.ac187c",
+                "b00d1b0b.a18dc8",
+                "91c3827a.badc5"
+            ]
+        ]
+    },
+    {
+        "id": "237bcbad.ea4ecc",
+        "type": "function",
+        "z": "1033d852.cbfa6",
+        "name": "",
+        "func": "msg.payload= Math.round(msg.payload / 13);\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 305.83343505859375,
+        "y": 518.1666870117188,
+        "wires": [
+            [
+                "d0442b82.80aec8",
+                "6340bf46.dd522",
+                "2e1c6879.22144",
+                "fd1c2ff5.d0098",
+                "f1f2c70d.8f6958"
+            ]
+        ]
+    },
+    {
+        "id": "7ca07bc1.d3dc5c",
+        "type": "exec",
+        "z": "1033d852.cbfa6",
+        "command": "python3 $HOME/Digital_Culture_Server/Python_Scripts/osc_client.py -i",
+        "addpay": true,
+        "append": "",
+        "useSpawn": "",
+        "timer": "",
+        "oldrc": false,
+        "name": "ETC Send",
+        "x": 426.6666564941406,
+        "y": 1253.3333129882812,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "164d7fc8.b1cc",
+        "type": "inject",
+        "z": "1033d852.cbfa6",
+        "name": "",
+        "topic": "x",
+        "payload": "192.168.1.115:4000",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "",
+        "x": 203,
+        "y": 1251,
+        "wires": [
+            [
+                "7ca07bc1.d3dc5c"
+            ]
+        ]
+    },
+    {
+        "id": "b910869a.6f66b",
+        "type": "mqtt in",
+        "z": "1033d852.cbfa6",
+        "name": "+/spirit_level/x",
+        "topic": "+/spirit_level/x",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "7d5f6d43.156514",
+        "x": 76,
+        "y": 552.3333129882812,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f842e6af.172ca8",
+        "type": "mqtt in",
+        "z": "1033d852.cbfa6",
+        "name": "+/spirit_level/y",
+        "topic": "+/spirit_level/y",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "7d5f6d43.156514",
+        "x": 625.8333129882812,
+        "y": 492,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "93f1d912.913b4",
+        "type": "mqtt in",
+        "z": "1033d852.cbfa6",
+        "name": "+/spirit_level/z",
+        "topic": "+/spirit_level/z",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "7d5f6d43.156514",
+        "x": 624.8333129882812,
+        "y": 545,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e872c631.71419",
+        "type": "ui_slider",
+        "z": "1033d852.cbfa6",
+        "name": "",
+        "label": "knob1",
+        "tooltip": "q",
+        "group": "98e6fb6c.fe7648",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "",
+        "min": 0,
+        "max": "1025",
+        "step": 1,
+        "x": 89.5,
+        "y": 923,
+        "wires": [
+            [
+                "d0442b82.80aec8"
+            ]
+        ]
+    },
+    {
+        "id": "ac64fdd.4ec438",
+        "type": "ui_slider",
+        "z": "1033d852.cbfa6",
+        "name": "",
+        "label": "knob2",
+        "tooltip": "",
+        "group": "98e6fb6c.fe7648",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "all",
+        "topic": "",
+        "min": 0,
+        "max": "1025",
+        "step": 1,
+        "x": 90,
+        "y": 967,
+        "wires": [
+            [
+                "6340bf46.dd522"
+            ]
+        ]
+    },
+    {
+        "id": "fdeaeb41.a8478",
+        "type": "ui_slider",
+        "z": "1033d852.cbfa6",
+        "name": "",
+        "label": "knob3",
+        "tooltip": "",
+        "group": "98e6fb6c.fe7648",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "",
+        "min": 0,
+        "max": "1025",
+        "step": 1,
+        "x": 87,
+        "y": 1007,
+        "wires": [
+            [
+                "2e1c6879.22144"
+            ]
+        ]
+    },
+    {
+        "id": "fecfd962.4509f8",
+        "type": "ui_slider",
+        "z": "1033d852.cbfa6",
+        "name": "knob4",
+        "label": "knob4",
+        "tooltip": "",
+        "group": "98e6fb6c.fe7648",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "knob4",
+        "min": 0,
+        "max": "1025",
+        "step": 1,
+        "x": 85,
+        "y": 1049,
+        "wires": [
+            [
+                "fd1c2ff5.d0098"
+            ]
+        ]
+    },
+    {
+        "id": "606c26d5.118a8",
+        "type": "ui_slider",
+        "z": "1033d852.cbfa6",
+        "name": "",
+        "label": "knob5",
+        "tooltip": "",
+        "group": "98e6fb6c.fe7648",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "knob5",
+        "min": 0,
+        "max": "1025",
+        "step": 1,
+        "x": 79,
+        "y": 1089,
+        "wires": [
+            [
+                "f1f2c70d.8f6958"
+            ]
+        ]
+    },
+    {
+        "id": "397ce825.9fb61",
+        "type": "ui_slider",
+        "z": "1033d852.cbfa6",
+        "name": "knob6",
+        "label": "knob6",
+        "tooltip": "",
+        "group": "98e6fb6c.fe7648",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "knob6",
+        "min": 0,
+        "max": "1025",
+        "step": 1,
+        "x": 82,
+        "y": 1125,
+        "wires": [
+            [
+                "a3e3d11e.caf6b8"
+            ]
+        ]
+    },
+    {
+        "id": "4c1ba095.d728",
+        "type": "ui_button",
+        "z": "1033d852.cbfa6",
+        "name": "",
+        "group": "1ff76cc3.355dd3",
+        "order": 5,
+        "width": "3",
+        "height": "2",
+        "passthru": false,
+        "label": "Saved Screen On",
+        "tooltip": "",
+        "color": "black",
+        "bgcolor": "orange",
+        "icon": "",
+        "payload": "1",
+        "payloadType": "num",
+        "topic": "",
+        "x": 95.41664123535156,
+        "y": 237.50003051757812,
+        "wires": [
+            [
+                "92bd6033.796648"
+            ]
+        ]
+    },
+    {
+        "id": "667ecf.9683d13",
+        "type": "ui_button",
+        "z": "1033d852.cbfa6",
+        "name": "",
+        "group": "1ff76cc3.355dd3",
+        "order": 7,
+        "width": "3",
+        "height": "2",
+        "passthru": false,
+        "label": "Trigger On",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "violet",
+        "icon": "",
+        "payload": "-1",
+        "payloadType": "num",
+        "topic": "",
+        "x": 99.58334350585938,
+        "y": 279.1666564941406,
+        "wires": [
+            [
+                "1b263844.2b2ea"
+            ]
+        ]
+    },
+    {
+        "id": "e5a5b039.fc428",
+        "type": "ui_button",
+        "z": "1033d852.cbfa6",
+        "name": "",
+        "group": "1ff76cc3.355dd3",
+        "order": 9,
+        "width": "3",
+        "height": "2",
+        "passthru": false,
+        "label": "Next Program",
+        "tooltip": "",
+        "color": "black",
+        "bgcolor": "green",
+        "icon": "",
+        "payload": "1",
+        "payloadType": "num",
+        "topic": "",
+        "x": 121.25,
+        "y": 356.66668701171875,
+        "wires": [
+            [
+                "f9ed3236.6b4db"
+            ]
+        ]
+    },
+    {
+        "id": "cba5ffab.e899b8",
+        "type": "ui_button",
+        "z": "1033d852.cbfa6",
+        "name": "",
+        "group": "1ff76cc3.355dd3",
+        "order": 8,
+        "width": "3",
+        "height": "2",
+        "passthru": false,
+        "label": "Previous Program",
+        "tooltip": "",
+        "color": "black",
+        "bgcolor": "cobalt",
+        "icon": "",
+        "payload": "1",
+        "payloadType": "num",
+        "topic": "",
+        "x": 137.0833282470703,
+        "y": 408.33331298828125,
+        "wires": [
+            [
+                "243c7927.05154e"
+            ]
+        ]
+    },
+    {
+        "id": "cdebd2e6.5d1f2",
+        "type": "ui_button",
+        "z": "1033d852.cbfa6",
+        "name": "",
+        "group": "1ff76cc3.355dd3",
+        "order": 6,
+        "width": "3",
+        "height": "2",
+        "passthru": false,
+        "label": "Trigger and Off",
+        "tooltip": "",
+        "color": "black",
+        "bgcolor": "white",
+        "icon": "",
+        "payload": "1",
+        "payloadType": "num",
+        "topic": "",
+        "x": 114.58333333333331,
+        "y": 314.16666666666663,
+        "wires": [
+            [
+                "1b263844.2b2ea"
+            ]
+        ]
+    },
+    {
+        "id": "91bc2e54.60144",
+        "type": "ui_button",
+        "z": "1033d852.cbfa6",
+        "name": "",
+        "group": "1ff76cc3.355dd3",
+        "order": 4,
+        "width": "3",
+        "height": "2",
+        "passthru": false,
+        "label": "Saved Screen Off",
+        "tooltip": "",
+        "color": "black",
+        "bgcolor": "yellow",
+        "icon": "",
+        "payload": "-1",
+        "payloadType": "num",
+        "topic": "",
+        "x": 104.58332824707031,
+        "y": 194.99998474121094,
+        "wires": [
+            [
+                "92bd6033.796648"
+            ]
+        ]
+    },
+    {
+        "id": "98cd8aff.446048",
+        "type": "ui_button",
+        "z": "1033d852.cbfa6",
+        "name": "",
+        "group": "1ff76cc3.355dd3",
+        "order": 2,
+        "width": "2",
+        "height": "2",
+        "passthru": false,
+        "label": "Menu",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "blue",
+        "icon": "",
+        "payload": "1",
+        "payloadType": "num",
+        "topic": "",
+        "x": 66.24999999999999,
+        "y": 157.49999999999997,
+        "wires": [
+            [
+                "ec0a3094.4d27a"
+            ]
+        ]
+    },
+    {
+        "id": "ee4bfbef.62de1",
+        "type": "ui_button",
+        "z": "1033d852.cbfa6",
+        "name": "",
+        "group": "1ff76cc3.355dd3",
+        "order": 1,
+        "width": "2",
+        "height": "2",
+        "passthru": false,
+        "label": "Auto Clear",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "green",
+        "icon": "",
+        "payload": "1",
+        "payloadType": "num",
+        "topic": "",
+        "x": 74.58333333333333,
+        "y": 108.33333333333331,
+        "wires": [
+            [
+                "5981b59c.075a6c"
+            ]
+        ]
+    },
+    {
+        "id": "ff34f53b.828818",
+        "type": "ui_button",
+        "z": "1033d852.cbfa6",
+        "name": "",
+        "group": "1ff76cc3.355dd3",
+        "order": 3,
+        "width": "2",
+        "height": "2",
+        "passthru": false,
+        "label": "Screen Capture",
+        "tooltip": "",
+        "color": "red",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "1",
+        "payloadType": "num",
+        "topic": "",
+        "x": 91.25,
+        "y": 51.66666666666666,
+        "wires": [
+            [
+                "1dce500d.a52738"
+            ]
+        ]
+    },
+    {
+        "id": "e4dc16f4.3fad5",
+        "type": "ui_text_input",
+        "z": "1033d852.cbfa6",
+        "name": "",
+        "label": "ETC IP",
+        "tooltip": "192.168.1.115:4000",
+        "group": "1ff76cc3.355dd3",
+        "order": 10,
+        "width": "6",
+        "height": "2",
+        "passthru": true,
+        "mode": "text",
+        "delay": "0",
+        "topic": "",
+        "x": 149.08334350585938,
+        "y": 1203.5000305175781,
+        "wires": [
+            [
+                "7ca07bc1.d3dc5c"
+            ]
+        ]
+    },
+    {
+        "id": "582b9b17.000c04",
+        "type": "mqtt in",
+        "z": "1033d852.cbfa6",
+        "name": "place_sense/place_sense/light",
+        "topic": "place_sense/place_sense/light",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "7d5f6d43.156514",
+        "x": 135,
+        "y": 620.5556030273438,
+        "wires": [
+            [
+                "237bcbad.ea4ecc",
+                "f9ed3236.6b4db"
+            ]
+        ]
+    },
+    {
+        "id": "7d5f6d43.156514",
+        "type": "mqtt-broker",
+        "z": "",
+        "broker": "192.168.1.55",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": true,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "98e6fb6c.fe7648",
+        "type": "ui_group",
+        "z": "",
+        "name": "ETC Controls",
+        "tab": "3cc3b18c.ef6406",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "1ff76cc3.355dd3",
+        "type": "ui_group",
+        "z": "",
+        "name": "ETC Buttons",
+        "tab": "3cc3b18c.ef6406",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "3cc3b18c.ef6406",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Critter and Guitari ETC Controls",
+        "icon": "dashboard",
+        "order": 3,
+        "disabled": false,
+        "hidden": false
+    }
+]
