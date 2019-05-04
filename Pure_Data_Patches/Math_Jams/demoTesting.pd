@@ -1,28 +1,0 @@
-#N canvas 351 129 824 395 10;
-#X obj 364 251 dac~;
-#X obj 57 -22 *~ 4.408e+006;
-#X text 66 234 comment;
-#X text 618 214 (gate)=kick*amp \; (Lglitch)*(AM)*amp \; (Rglitch)*(AM)*amp
-\; (Lchord)*(gate)*(AM)*amp \; (Rchord)*(gate)*(AM)*amp \; (LhighFM1)*(gate)*(AM)*amp
-\; (RhighFM1)*(gate)*(AM)*amp \; (RlowFM2)*(gate)*(AM)*amp \; (LlowFM2)*(gate)*(AM)*amp
-\;;
-#X obj 57 -45 phasor~ 0.0091;
-#X obj 57 33 expr~ (sin($v1%400000*1249))*(sin($v1/1600) * 0.5+0.5)*0.1
-\; (sin($v1/(8*$v1/10%10)))*($v1%(5510*2)<5000)*(sin($v1/25000)*0.5+0.5)*0.05
-\; (sin($v1/(4*$v1%12)))*($v1%(5510*2)<5000)*(sin($v1/12000)*0.5+0.5)*0.05
-\;;
-#X obj 430 37 expr~ (sin($v1+sin($v1/4) * (sin($v1/1500) * sin($v1/5000)
-* 10))) * ($v1%5510<800) * (sin($v1/6000) * 0.5+0.5)*0.2 \; (sin($v1+sin($v1/8)
-* (sin($v1/3000) * sin($v1/10000) * 10))) * ($v1%5510<800)* (sin($v1/4000)
-* 0.5+0.5)*0.2 \;;
-#X connect 1 0 5 0;
-#X connect 1 0 6 0;
-#X connect 4 0 1 0;
-#X connect 5 0 0 0;
-#X connect 5 0 0 1;
-#X connect 5 1 0 0;
-#X connect 5 2 0 1;
-#X connect 6 0 0 0;
-#X connect 6 0 0 1;
-#X connect 6 1 0 1;
-#X connect 6 1 0 0;
