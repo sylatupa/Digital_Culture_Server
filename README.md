@@ -36,4 +36,4 @@ Running headless:
 Running Mosquitto Broker automatically on boot
 
 [dashboard1]: ./Images/node_red_dashboard.png
-[dashboard1]:	./Images/node_red_dashboard_controls_for_ESP32.png
+[dashboard2]:	./Images/node_red_dashboard_controls_for_ESP32.png
