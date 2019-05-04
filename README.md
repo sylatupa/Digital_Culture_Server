@@ -17,17 +17,23 @@ This project uses an additional wifi-router that is plugged into my homes wifi r
 ![dashboard2]
 
 
+
 ## Getting Started
 
 On many Pi OS images there is Node-Red already installed. It can be started from the terminal by typing node-red. The server will start and tell you the ip address that its running on, like:  [info] Server now running at http://127.0.0.1:1880/. Because we gave the Pi a reserved ip on the wifi router, and my laptop is using the same network, I open the Node-Red web interface using the Pis ip, and the port 1880. 
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
+To build the dashboards and controls in Node-Red, import the following flow file into your Node-Red instance. It will require the addition of the Dashboard plugin.
+[node_red_flows.json](./node_red_flows.json)
+
+
 ### Prerequisites
 
 Networking:
 1) Standalond wifi-router, with Pi plugged directly into the ethernet.
 2) Adjust the DHCP Reservation of the router to give the Pi a static ip, a reserved ip address.
+
 
 Running headless:
 
