@@ -52,3 +52,7 @@ The Digital_Thing is built in the context of a Digital Culture, Arts Media and E
 
 [dashboard1]: ./Images/node_red_dashboard.png
 [dashboard2]:	./Images/ETC_Controls.png
+
+
+## An Arizona State University Herberger, Institute for the Design and the Arts, Digital Culture Masters Final Project, 2019.
+
