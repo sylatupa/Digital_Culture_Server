@@ -8,13 +8,15 @@ Based off of Node Red because of its ease of use and support, as well as the web
 
 To convert MQTT to UDP, there is a standalone python script that is a MQTT broker and converts to UDP, if Node Red installation is not necessary or desirable.
 This implementation will be done on a Raspberry Pi.
-
+ 
+ ![dashboard1]
+ 
 ## Reasoning and Motivations
 IOT and the arts:
 Stand alone server benefits:
 Stand alone wifi-router: This project uses an additional wifi-router that is plugged into my homes wifi router, so it is interntet connected. But, the benefit of having this additional router layer is that I can take it with me to bring the network into locations that wouldn't have accessible wifi. Getting a battery operated wifi could make this potentially able to be run anywhere.
 
-
+![dashboard2]
 
 ## Getting Started
 
@@ -33,16 +35,5 @@ Running headless:
 
 Running Mosquitto Broker automatically on boot
 
-
-```
-Give examples
-```
-
-### Installing
-
-At the time of writing this, Node-Red on a Pi was at version 15.3. 
-Node-Red is typically on a Raspberry Pi already. But, before you get started developing with it--upgrade it by running:
-
-```
-sudo apt-get install --only-upgrade nodered
-```
+[dashboard1]: ./Images/node_red_dashboard.png
+[dashboard1]:	./Images/node_red_dashboard_controls_for_ESP32.png
